@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Valentine Letter</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet" />
+
+  <!-- tsParticles -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Floating Hearts Background -->
+  <div id="tsparticles"></div>
+
+  <!-- Envelope Screen -->
+  <div id="envelope-container">
+    <img src="envelope.png" alt="Envelope" id="envelope" />
+    <p><strong>♡..Letter for Pino..♡</strong></p>
+  </div>
+
+  <!-- Letter Screen -->
+  <div id="letter-container">
+    <div class="letter-window">
+      <h1 id="letter-title">♡..Happy Valentine's Day, Pino..♡</h1>
+
+      <img src="cat_heart.gif" class="cat" id="letter-cat" />
+
+      <h1 id="letter-footer">♡..Will you accept my gift?..♡</h1>
+
+      <div class="buttons" id="letter-buttons">
+        <img src="yes.png" class="btn yes-btn" alt="Yes" />
+        <div class="no-wrapper">
+          <img src="no.png" class="btn no-btn" alt="No" />
+        </div>
+      </div>
+
+      <p id="final-text" class="final-text" style="display: none">
+        <strong>♡..Open the box, I hope you like it Pino..♡</strong>
+      </p>
+    </div>
+  </div>
+
+  <!-- Background Music -->
+  <audio id="bg-music" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+  </audio>
+
+  <script src="script.js"></script>
+
+  <!-- Floating flower Config -->
+  <script>
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: { value: 35 },
+        shape: {
+          type: "char",
+          character: {
+            value: "🌸",
+            font: "Pixelify Sans",
+            weight: "450"
+          }
+        },
+        size: { value: 15 },
+        move: {
+          enable: true,
+          speed: 1,
+          direction: "bottom"
+        },
+        opacity: { value: 0.9 }
+      }
+    });
+  </script>
+
+</body>
+</html>

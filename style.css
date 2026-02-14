@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("https://cdn.vectorstock.com/i/250p/00/99/floral-hearts-seamless-pattern-vector-38670099.avif");
+  background-size: cover;
+  background-position: center;
+  font-family: "Pixelify Sans", sans-serif;
+}
+
+/* Floating hearts layer */
+#tsparticles {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Keep content above hearts */
+#envelope-container,
+#letter-container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Envelope */
+#envelope-container {
+  text-align: center;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+#envelope {
+  width: clamp(160px, 40vw, 250px);
+  animation: pulse 1.5s infinite;
+}
+
+/* Letter */
+#letter-container {
+  display: none;
+  position: fixed;
+  inset: 0;
+  justify-content: center;
+  align-items: center;
+}
+
+.letter-window {
+  width: 90vw;
+  max-width: 800px;
+  aspect-ratio: 3/2;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-image: url("window.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 12px;
+  padding-top: clamp(150px, 25vw, 180px);
+  transform: scale(1.2);
+  opacity: 0;
+  transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.letter-window.open {
+  transform: scale(1);
+  opacity: 1;
+}
+
+h1 {
+  font-size: clamp(18px, 4vw, 30px);
+  margin: 0;
+}
+
+p {
+  font-size: clamp(20px, 6vw, 40px);
+}
+
+.cat {
+  width: clamp(110px, 28vw, 180px);
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  position: relative;
+}
+
+.btn {
+  width: clamp(90px, 25vw, 120px);
+  cursor: pointer;
+}
+
+.final-text {
+  font-size: clamp(16px, 4vw, 22px);
+  padding: 10px 20px;
+  background-color: rgba(255,240,240,0.5);
+  border-radius: 12px;
+}
+
+/* Colorful Stardust Trail */
+.stardust {
+  position: fixed;
+  width: 11px;
+  height: 11px;
+  pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(circle,
+    var(--glow-color) 0%,
+    transparent 70%);
+  box-shadow:
+    0 0 6px var(--glow-color),
+    0 0 12px var(--glow-color),
+    0 0 18px var(--glow-color);
+  animation: stardustFade 0.8s ease-out forwards;
+  z-index: 3;
+}
+
+@keyframes stardustFade {
+  0% {
+    opacity: 1;
+    transform: scale(0.6);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.3);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.8);
+  }
+}
